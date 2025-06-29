@@ -1,31 +1,19 @@
+# main.py
 import os
 import json
-import asyncio
 import aiohttp
+import asyncio
+from base64 import b64decode
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import unpad
-from base64 import b64decode
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
-# Bot configuration
-API_BASE = "https://rgvikramjeetapi.classx.co.in"
-API_KEY = os.getenv("API_KEY", "appxapi")
-HEADERS = {
-    "Auth-Key": API_KEY,
-    "User-Id": "-2",
-    "Content-Type": "application/x-www-form-urlencoded",
-    "User-Agent": "okhttp/4.9.1"
-}
+from config import API_ID, API_HASH, BOT_TOKEN, API_BASE, API_KEY, DEFAULT_HEADERS
 
-# Initialize Pyrogram client
-app = Client(
-    "rgvikramjeet_bot",
-    api_id=os.getenv("API_ID"),
-    api_hash=os.getenv("API_HASH"),
-    bot_token=os.getenv("BOT_TOKEN")
-)
+app = Client("rgvikramjeet_bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
+# All your logic here as before...
 def decrypt(encrypted_data: str) -> str:
     """Decrypt RG Vikramjeet links using AES-CBC"""
     try:
