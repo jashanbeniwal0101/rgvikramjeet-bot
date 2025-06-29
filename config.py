@@ -2,8 +2,8 @@
 import os
 
 # Telegram API details
-API_ID = int(os.getenv("API_ID", 12345))
-API_HASH = os.getenv("API_HASH", "your_api_hash")
+API_ID = int(os.getenv("API_ID", "25331263"))
+API_HASH = os.getenv("API_HASH", "cab85305bf85125a2ac053210bcd1030")
 BOT_TOKEN = os.getenv("BOT_TOKEN", "your_bot_token")
 
 # RG Vikramjeet API configuration
